@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@plugin "daisyui"{
+  themes: light --default, dark --prefersdark;
+  root: ":root";
+  include: ;
+  exclude: ;
+  prefix: ;
+  logs: true;
+}
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary:        oklch(0.8906 0.1732 171.65);   /* #01FFCD  ← same vivid cyan */
+  --color-secondary:      oklch(0.5965 0 0);             /* #7F7F7F  ← same neutral gray */
+  --color-accent:         oklch(0.682 0.145 174.5);      /* #1FB2A6  ← same teal */
+  --color-info:           oklch(0.748 0.165 238.0);      /* #3ABFF8  ← same bright blue */
+  --color-success:        oklch(0.805 0.140 150.0);      /* #36D399  ← same mint green */
+  --color-warning:        oklch(0.870 0.190 85.0);       /* #FFCD01  ← same vivid yellow */
+  --color-error:          oklch(0.705 0.220 25.5);       /* #F87272  ← same soft red */
+}
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: false;
+  --color-primary:        oklch(0.885 0.180 188.0);      /* #01FFCD  ← same vivid cyan */
+  --color-secondary:      oklch(0.540 0.000 0.0);        /* #7F7F7F  ← same neutral gray */
+  --color-accent:         oklch(0.682 0.145 174.5);      /* #1FB2A6  ← same teal */
+  --color-info:           oklch(0.748 0.165 238.0);      /* #3ABFF8  ← same bright blue */
+  --color-success:        oklch(0.805 0.140 150.0);      /* #36D399  ← same mint green */
+  --color-warning:        oklch(0.870 0.190 85.0);       /* #FFCD01  ← same vivid yellow */
+  --color-error:          oklch(0.705 0.220 25.5);       /* #F87272  ← same soft red */
+}
