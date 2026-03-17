@@ -31,3 +31,12 @@
   --color-warning:        oklch(0.870 0.190 85.0);       /* #FFCD01  ← same vivid yellow */
   --color-error:          oklch(0.705 0.220 25.5);       /* #F87272  ← same soft red */
 }
+
+:root {
+  --glass-blur: 16px;
+  --glass-opacity: 0.22;
+  --glass-reflect-degree: 40deg;
+  --glass-reflect-opacity: 0.2;
+  --glass-border-opacity: 0.32;
+  --glass-text-shadow-opacity: 0.18;
+}
