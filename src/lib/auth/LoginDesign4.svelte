@@ -1,6 +1,6 @@
 <script>
   import { createCSClient } from '$lib/cs-client';
-  import { setAuth } from '$lib/authStore';
+import { setAuth } from '$lib/appStore';
   import { goto } from '$app/navigation';
   let email='', password='', loading=false, message='';
   const csClient=createCSClient({ host: import.meta.env.VITE_CS_API_HOST || 'https://localhost' });

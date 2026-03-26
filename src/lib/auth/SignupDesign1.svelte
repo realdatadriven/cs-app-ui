@@ -1,7 +1,6 @@
 <script>
   import { createCSClient } from '$lib/cs-client';
-  import { setAuth } from '$lib/authStore';
-  import { goto } from '$app/navigation';
+import { setAuth } from '$lib/appStore';
 
   let name = '';
   let email = '';
