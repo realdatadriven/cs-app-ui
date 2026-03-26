@@ -19,7 +19,7 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 <div class="theme-control fixed top-4 right-4 z-50">
-  <button class="btn btn-sm btn-outline" on:click={toggleTheme} aria-label="Toggle theme">
+  <button class="btn btn-sm btn-outline" onclick={toggleTheme} aria-label="Toggle theme">
     Toggle Theme
   </button>
 </div>

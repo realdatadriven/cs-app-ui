@@ -1,5 +1,4 @@
 <script>
-  export let params;
   import { page } from '$app/stores';
 
   import LoginDesign1 from '$lib/auth/LoginDesign1.svelte';
@@ -36,10 +35,16 @@
     },
   };
 
-  $: design = Number($page.url.searchParams.get('design') || 1);
-  $: mode = params.mode === 'register' ? 'register' : params.mode === 'recovery' ? 'recovery' : 'login';
+  let design = 1;
+  let mode = 'login';
+  let Component = LoginDesign1;
 
-  $: Component = components[mode]?.[design] || components[mode]?.[1] || LoginDesign1;
+  $effect(() => {
+    design = Number(page.url.searchParams.get('design') || 1);
+    const pathMode = page.url.pathname.split('/').pop();
+    mode = pathMode === 'register' ? 'register' : pathMode === 'recovery' ? 'recovery' : 'login';
+    Component = components[mode]?.[design] || components[mode]?.[1] || LoginDesign1;
+  });
 </script>
 
 <svelte:component this={Component} />

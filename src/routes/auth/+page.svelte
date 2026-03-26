@@ -1,8 +1,6 @@
 <script>
-  import { page } from '$app/stores';
   const designs = [1,2,3,4];
   const modes = ['login','register','recovery'];
-  $: currentDesign = parseInt($page.url.searchParams.get('design') || '1');
 </script>
 
 <div class="min-h-screen bg-base-200 p-8">

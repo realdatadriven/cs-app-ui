@@ -34,10 +34,10 @@
           <li><a href="#faq" class="hover:text-nebula-cyan">FAQ</a></li>
         </ul>
         <div class="divider divider-horizontal mx-2"></div>
-        <button class="btn btn-outline btn-sm border-nebula-teal text-nebula-teal hover:bg-nebula-teal/20" on:click={() => openDialog('login-modal')}>
+        <button class="btn btn-outline btn-sm border-nebula-teal text-nebula-teal hover:bg-nebula-teal/20" onclick={() => openDialog('login-modal')}>
           Login
         </button>
-        <button class="btn btn-nebula btn-sm" on:click={() => openDialog('register-modal')}>
+        <button class="btn btn-nebula btn-sm" onclick={() => openDialog('register-modal')}>
           Register
         </button>
       </div>
@@ -53,9 +53,9 @@
 
   <dialog id="login-modal" class="modal">
     <div class="modal-box">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" on:click={() => closeDialog('login-modal')}>✕</button>
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick={() => closeDialog('login-modal')}>✕</button>
       <h3 class="text-3xl font-bold text-nebula-cyan text-center mb-8">Welcome Back</h3>
-      <form class="space-y-6" on:submit|preventDefault={() => closeDialog('login-modal')}>
+      <form class="space-y-6" onsubmit={(event) => { event.preventDefault(); closeDialog('login-modal'); }}>
         <div>
           <label for="login-email" class="label"><span class="label-text text-gray-300">Email</span></label>
           <input id="login-email" type="email" placeholder="you@nebula.com" class="input-field" required />
@@ -75,7 +75,7 @@
       </form>
       <div class="text-center mt-6 text-gray-400">
         Don't have an account?
-        <button class="text-nebula-cyan hover:underline font-medium" on:click={() => { closeDialog('login-modal'); openDialog('register-modal'); }}>
+        <button class="text-nebula-cyan hover:underline font-medium" onclick={() => { closeDialog('login-modal'); openDialog('register-modal'); }}>
           Register
         </button>
       </div>
@@ -85,9 +85,9 @@
 
   <dialog id="register-modal" class="modal">
     <div class="modal-box">
-      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" on:click={() => closeDialog('register-modal')}>✕</button>
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick={() => closeDialog('register-modal')}>✕</button>
       <h3 class="text-3xl font-bold text-nebula-cyan text-center mb-8">Create Account</h3>
-      <form class="space-y-6" on:submit|preventDefault={() => closeDialog('register-modal')}>
+      <form class="space-y-6" onsubmit={(event) => { event.preventDefault(); closeDialog('register-modal'); }}>
         <div>
           <label for="register-name" class="label"><span class="label-text text-gray-300">Full Name</span></label>
           <input id="register-name" type="text" placeholder="João Silva" class="input-field" />
@@ -108,7 +108,7 @@
       </form>
       <div class="text-center mt-6 text-gray-400">
         Already have an account?
-        <button class="text-nebula-cyan hover:underline font-medium" on:click={() => { closeDialog('register-modal'); openDialog('login-modal'); }}>
+        <button class="text-nebula-cyan hover:underline font-medium" onclick={() => { closeDialog('register-modal'); openDialog('login-modal'); }}>
           Sign in
         </button>
       </div>
