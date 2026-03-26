@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Signup</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="./output.css" rel="stylesheet" />
+		<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+	</head>
+	<body class="bg-base-200 flex min-h-screen items-center justify-center">
+		<div class="m-4 min-h-[50vh] w-full max-w-sm lg:max-w-4xl">
+			<!-- logo -->
+			<div class="flex items-center justify-center gap-2 p-8">
+				<svg
+					width="24"
+					height="24"
+					viewBox="0 0 1024 1024"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<rect x="256" y="670.72" width="512" height="256" rx="128" class="fill-base-content" />
+					<circle cx="512" cy="353.28" r="256" class="fill-base-content" />
+					<circle
+						cx="512"
+						cy="353.28"
+						r="261"
+						stroke="black"
+						stroke-opacity="0.2"
+						stroke-width="10" />
+					<circle cx="512" cy="353.28" r="114.688" class="fill-base-200" />
+				</svg>
+				<h1 class="text-lg font-semibold">Signup new account</h1>
+			</div>
+			<!-- /logo -->
+			<main class="bg-base-100 grid lg:aspect-2/1 lg:grid-cols-2">
+				<!-- image -->
+				<figure class="bg-base-300 pointer-events-none object-cover max-lg:hidden">
+					<img src="https://picsum.photos/id/287/1200/1200" alt="Login" class="h-full" />
+				</figure>
+				<!-- /image -->
+				<form class="flex flex-col justify-center gap-4 px-10 py-10 lg:px-16">
+					<!-- name -->
+					<div class="form-control">
+						<label class="label" for="input1"><span class="label-text">Name</span></label>
+						<input
+							type="text"
+							placeholder="name"
+							class="input input-bordered [&:user-invalid]:input-warning [&:user-valid]:input-success"
+							pattern="^[a-zA-Z0-9_.-]*$"
+							minlength="1"
+							required
+							id="input1" />
+					</div>
+					<!-- /name -->
+					<!-- email -->
+					<div class="form-control">
+						<label class="label" for="input1"><span class="label-text">Email</span></label>
+						<input
+							type="email"
+							placeholder="email"
+							class="input input-bordered [&:user-invalid]:input-warning [&:user-valid]:input-success"
+							required
+							id="input1" />
+					</div>
+					<!-- password -->
+					<div class="form-control">
+						<label class="label" for="input2"><span class="label-text">Password</span></label>
+						<input
+							type="password"
+							placeholder="password"
+							class="input input-bordered [&:user-invalid]:input-warning [&:user-valid]:input-success"
+							required
+							minlength="6"
+							for="input2" />
+					</div>
+					<!-- /password -->
+					<!-- submit -->
+					<button class="btn btn-neutral" type="submit">Login</button>
+					<!-- /submit -->
+					<!-- login with google -->
+					<button type="button" class="btn">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink"
+							viewBox="0 0 32 32"
+							width="16"
+							height="16">
+							<defs>
+								<path
+									id="A"
+									d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z" />
+							</defs>
+							<clipPath id="B"><use xlink:href="#A" /></clipPath>
+							<g transform="matrix(.727273 0 0 .727273 -.954545 -1.45455)">
+								<path d="M0 37V11l17 13z" clip-path="url(#B)" fill="#fbbc05" />
+								<path d="M0 11l17 13 7-6.1L48 14V0H0z" clip-path="url(#B)" fill="#ea4335" />
+								<path d="M0 37l30-23 7.9 1L48 0v48H0z" clip-path="url(#B)" fill="#34a853" />
+								<path d="M48 48L17 24l-4-3 35-10z" clip-path="url(#B)" fill="#4285f4" />
+							</g>
+						</svg>
+						Login with Google
+					</button>
+					<!-- /login with google -->
+					<!-- login link -->
+					<div class="label justify-end">
+						<a class="link-hover link label-text-alt" href="#">Login to existing accout</a>
+					</div>
+					<!-- /login link -->
+				</form>
+			</main>
+		</div>
+		<label class="swap btn btn-sm btn-circle swap-rotate absolute start-4 top-4">
+			<!-- this hidden checkbox controls the state -->
+			<input type="checkbox" class="theme-controller" value="night" />
+
+			<!-- sun icon -->
+			<svg
+				class="swap-off size-4 fill-current"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24">
+				<path
+					d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+			</svg>
+
+			<!-- moon icon -->
+			<svg
+				class="swap-on size-4 fill-current"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24">
+				<path
+					d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+			</svg>
+		</label>
+	</body>
+</html>
