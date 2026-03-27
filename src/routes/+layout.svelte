@@ -27,4 +27,5 @@
 
 <!-- RETINKING THE LAYOUT TO USE DAISYUI COMPONENTS FOR A BETTER DEMO EXPERIENCE
 https://daisyui.com/components/drawer/#responsive-collapsible-icon-only-drawer-sidebar-using-is-drawer-close-and-is-drawer-open 
+https://daisyui.com/components/menu/#collapsible-submenu
 -->
