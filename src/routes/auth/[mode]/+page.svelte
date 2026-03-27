@@ -37,15 +37,16 @@
 
   let design = 1;
   let mode = 'login';
-  // svelte-ignore non_reactive_update
-  let Component = LoginDesign1;
+  let Component = $state(LoginDesign1);
 
   $effect(() => {
-    design = Number(page.url.searchParams.get('design') || 1);
-    const pathMode = page.url.pathname.split('/').pop();
+    design = Number($page.url.searchParams.get('design') || 1);
+    const pathMode = $page.url.pathname.split('/').pop();
     mode = pathMode === 'register' ? 'register' : pathMode === 'recovery' ? 'recovery' : 'login';
     Component = components[mode]?.[design] || components[mode]?.[1] || LoginDesign1;
   });
+
+  $inspect({ design, mode, Component });  
 </script>
 
 {@render Component?.()}
