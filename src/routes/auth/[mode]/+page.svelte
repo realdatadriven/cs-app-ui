@@ -37,6 +37,7 @@
 
   let design = 1;
   let mode = 'login';
+  // svelte-ignore non_reactive_update
   let Component = LoginDesign1;
 
   $effect(() => {
@@ -47,4 +48,4 @@
   });
 </script>
 
-<svelte:component this={Component} />
+{@render Component?.()}
