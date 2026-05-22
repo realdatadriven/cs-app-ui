@@ -61,7 +61,12 @@ export function createCSClient(initialConfig = {}) {
 
     const finalToken = overrideToken ?? state.token;
     if (finalToken) headers.Authorization = `Bearer ${finalToken}`;
-
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    headers['X-Timezone'] = timezone;
+    //console.log('Timezone:', timezone);
+    if (typeof payload === 'object') {
+        payload.timezone = timezone;
+    }
     let bodyPayload = payload;
     if (method !== 'GET' && payload && typeof payload === 'object' && !Array.isArray(payload)) {
       bodyPayload = { ...payload };
@@ -85,7 +90,9 @@ export function createCSClient(initialConfig = {}) {
         let errorData;
         try {
           errorData = await response.json();
-        } catch {}
+        } catch (e) {
+          errorData = { msg: `Failed to parse error response (${e.message})` };
+        }
         throw Object.assign(new Error(errorData?.msg || `HTTP ${response.status}`), {
           status: response.status,
           data: errorData,
